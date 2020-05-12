@@ -7,7 +7,7 @@
       <hr>
         <% @rooms.each do |room| %>
           <%= link_to room do %>
-            <div class="card">
+            <div class="card mb-2">
               <div class="card-body">
                 <%= room.name %>
               </div>
@@ -16,11 +16,14 @@
         <% end %>
     </div>
     <div class="col-9">
-    
+      <% if @room.present? %>
+        <p><%= @room.name %></p>
+      <% end %>
     </div>
   </div>
 </div>
 
+<!-- 這是scaffold一開始做好的
 <h1>Rooms</h1>
 
 <table>
@@ -46,3 +49,4 @@
 <br>
 
 <%= link_to 'New Room', new_room_path %>
+-->
