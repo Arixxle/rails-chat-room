@@ -3,7 +3,6 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-3">
-      <p>Hello, <%= current_user.username %></p>
       <%= render 'form', room: Room.new %>
       <hr>
         <% @rooms.each do |room| %>
@@ -19,7 +18,14 @@
     <div class="col-9">
       <% if @room.present? %>
         <div class="chat-room">
-          <p><%= @room.name %></p>
+          <nav class="navbar navbar-light bg-light mb-4">
+            <span class="navbar-brand mb-0 h1"><%= @room.name %></span>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                Hello, <%= current_user.username %>
+              </li>
+            </ul>
+          </nav>
           <% @room.messages.each do |message| %>
             <div class="message mb-2 <%= 'me' if message.user == current_user %>">
               <div class="content-container">
