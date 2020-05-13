@@ -1,6 +1,13 @@
+body{
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  -ms-overflow-style: none;
+}
+
 .chat-room{
   // background-color: #eee;
-  height: 100vh;
+  height: 95vh;
   overflow-y: scroll;
   padding-bottom: 80px;
   .message{
@@ -68,4 +75,7 @@
       color: #777;
     }
   }
+}
+.rooms-sidebar{
+  border-right: 1px solid #eee;
 }
